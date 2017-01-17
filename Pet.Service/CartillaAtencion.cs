@@ -8,7 +8,7 @@ using Pet.Entity;
 namespace Pet.Service
 {
     public class CartillaAtencion
-    {
+    {    
 
 
         public static object obtenerPorComprobante(String numeroComprobante)
