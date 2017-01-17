@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="673b63975d7b4aae83ee38b9335bea55" Name="Diagrama1" ZoomLevel="79">
+        <EntityTypeShape EntityType="PET_DBModel.Cartilla_Atencion" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Cliente" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Comprobante_Examen" Width="1.5" PointX="11" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Comprobante_Pago" Width="1.5" PointX="8" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Detalle_Atencion" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Empleado" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Equipo_Sede" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Examen" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Paciente" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Sede" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="PET_DBModel.fk_id_cliente_atencion" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_det_cartilla_de_atencion" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_empleado_atencion" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_paciente_atencion" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_cliente_paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_cliente_pago" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_id_comprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_tipo_examen" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_paciente_pago" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_det_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_det_empleado_equipo" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_det_tipo_examen" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_empleado_sede" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_empleado_supervisor" ManuallyRouted="false" />
+        <AssociationConnector Association="PET_DBModel.fk_id_equipo_sede" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PET_DBModel.Usuarios" Width="1.5" PointX="9.375" PointY="13.25" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

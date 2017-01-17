@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PET_DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PET_DBModelStoreContainer">
+          <EntitySet Name="Cartilla_Atencion" EntityType="PET_DBModel.Store.Cartilla_Atencion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cliente" EntityType="PET_DBModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comprobante_Examen" EntityType="PET_DBModel.Store.Comprobante_Examen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comprobante_Pago" EntityType="PET_DBModel.Store.Comprobante_Pago" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Detalle_Atencion" EntityType="PET_DBModel.Store.Detalle_Atencion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Empleado" EntityType="PET_DBModel.Store.Empleado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Equipo_Sede" EntityType="PET_DBModel.Store.Equipo_Sede" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Examen" EntityType="PET_DBModel.Store.Examen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Paciente" EntityType="PET_DBModel.Store.Paciente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sede" EntityType="PET_DBModel.Store.Sede" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="PET_DBModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_id_cliente_atencion" Association="PET_DBModel.Store.fk_id_cliente_atencion">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_cliente_paciente" Association="PET_DBModel.Store.fk_id_cliente_paciente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_cliente_pago" Association="PET_DBModel.Store.fk_id_cliente_pago">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_det_cartilla_de_atencion" Association="PET_DBModel.Store.fk_id_det_cartilla_de_atencion">
+            <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+            <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_det_empleado" Association="PET_DBModel.Store.fk_id_det_empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_det_empleado_equipo" Association="PET_DBModel.Store.fk_id_det_empleado_equipo">
+            <End Role="Equipo_Sede" EntitySet="Equipo_Sede" />
+            <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_det_tipo_examen" Association="PET_DBModel.Store.fk_id_det_tipo_examen">
+            <End Role="Examen" EntitySet="Examen" />
+            <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empleado_atencion" Association="PET_DBModel.Store.fk_id_empleado_atencion">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empleado_sede" Association="PET_DBModel.Store.fk_id_empleado_sede">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empleado_supervisor" Association="PET_DBModel.Store.fk_id_empleado_supervisor">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Empleado1" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_equipo_sede" Association="PET_DBModel.Store.fk_id_equipo_sede">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Equipo_Sede" EntitySet="Equipo_Sede" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_id_comprobante" Association="PET_DBModel.Store.fk_id_id_comprobante">
+            <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+            <End Role="Comprobante_Examen" EntitySet="Comprobante_Examen" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_paciente_atencion" Association="PET_DBModel.Store.fk_id_paciente_atencion">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_paciente_pago" Association="PET_DBModel.Store.fk_id_paciente_pago">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_tipo_examen" Association="PET_DBModel.Store.fk_id_tipo_examen">
+            <End Role="Examen" EntitySet="Examen" />
+            <End Role="Comprobante_Examen" EntitySet="Comprobante_Examen" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cartilla_Atencion">
+          <Key>
+            <PropertyRef Name="id_cartilla_atencion" />
+          </Key>
+          <Property Name="id_cartilla_atencion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="id_paciente" Type="int" Nullable="false" />
+          <Property Name="id_empleado" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="30" />
+          <Property Name="fecha_creacion" Type="datetime" />
+          <Property Name="estado_cartilla" Type="varchar" MaxLength="50" />
+          <Property Name="numero_comprobante" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dni" Type="varchar" MaxLength="8" />
+          <Property Name="apellido_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellido_materno" Type="varchar" MaxLength="50" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="sexo" Type="varchar" MaxLength="1" />
+          <Property Name="direccion" Type="varchar" MaxLength="120" />
+          <Property Name="telefono_casa" Type="varchar" MaxLength="10" />
+          <Property Name="celular" Type="varchar" MaxLength="12" />
+          <Property Name="correo" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Comprobante_Examen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_comprobante" Type="int" Nullable="false" />
+          <Property Name="id_tipo_examen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comprobante_Pago">
+          <Key>
+            <PropertyRef Name="id_comprobante" />
+          </Key>
+          <Property Name="id_comprobante" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="id_paciente" Type="int" Nullable="false" />
+          <Property Name="numero_comprobante" Type="varchar" MaxLength="30" />
+          <Property Name="monto_total" Type="decimal" />
+          <Property Name="fecha_creacion" Type="datetime" />
+          <Property Name="tipo_comprobante" Type="varchar" MaxLength="30" />
+          <Property Name="forma_pago" Type="varchar" MaxLength="30" />
+          <Property Name="estado_comprobante" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Detalle_Atencion">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_cartilla_atencion" Type="int" Nullable="false" />
+          <Property Name="id_tipo_examen" Type="int" Nullable="false" />
+          <Property Name="id_empleado" Type="int" />
+          <Property Name="especificacion_examen" Type="varchar" MaxLength="130" />
+          <Property Name="estado_examen_atencion" Type="varchar" MaxLength="50" />
+          <Property Name="id_equipo" Type="int" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="id_empleado" />
+          </Key>
+          <Property Name="id_empleado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dni" Type="varchar" MaxLength="8" />
+          <Property Name="nombres" Type="varchar" MaxLength="20" />
+          <Property Name="apellido_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellido_materno" Type="varchar" MaxLength="50" />
+          <Property Name="especialidad" Type="varchar" MaxLength="50" />
+          <Property Name="sexo" Type="varchar" MaxLength="1" />
+          <Property Name="direccion" Type="varchar" MaxLength="120" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="telefono_casa" Type="varchar" MaxLength="10" />
+          <Property Name="celular" Type="varchar" MaxLength="12" />
+          <Property Name="correo" Type="varchar" MaxLength="20" />
+          <Property Name="cargo" Type="varchar" MaxLength="20" />
+          <Property Name="id_supervisor" Type="int" />
+          <Property Name="id_sede" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipo_Sede">
+          <Key>
+            <PropertyRef Name="id_equipo" />
+          </Key>
+          <Property Name="id_equipo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="id_sede" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Examen">
+          <Key>
+            <PropertyRef Name="id_tipo_examen" />
+          </Key>
+          <Property Name="id_tipo_examen" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_examen" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_creacion" Type="date" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="id_paciente" />
+          </Key>
+          <Property Name="id_paciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="raza" Type="varchar" MaxLength="60" />
+          <Property Name="tipo" Type="varchar" MaxLength="30" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="color" Type="varchar" MaxLength="30" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sede">
+          <Key>
+            <PropertyRef Name="id_sede" />
+          </Key>
+          <Property Name="id_sede" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ubicacion" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="full_nombres" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="nombre_usuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="clave_usuario" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="fk_id_cliente_atencion">
+          <End Role="Cliente" Type="PET_DBModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Cartilla_Atencion" Type="PET_DBModel.Store.Cartilla_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="Cartilla_Atencion">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_cliente_paciente">
+          <End Role="Cliente" Type="PET_DBModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Paciente" Type="PET_DBModel.Store.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_cliente_pago">
+          <End Role="Cliente" Type="PET_DBModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Comprobante_Pago" Type="PET_DBModel.Store.Comprobante_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="Comprobante_Pago">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_det_cartilla_de_atencion">
+          <End Role="Cartilla_Atencion" Type="PET_DBModel.Store.Cartilla_Atencion" Multiplicity="1" />
+          <End Role="Detalle_Atencion" Type="PET_DBModel.Store.Detalle_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cartilla_Atencion">
+              <PropertyRef Name="id_cartilla_atencion" />
+            </Principal>
+            <Dependent Role="Detalle_Atencion">
+              <PropertyRef Name="id_cartilla_atencion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_det_empleado">
+          <End Role="Empleado" Type="PET_DBModel.Store.Empleado" Multiplicity="0..1" />
+          <End Role="Detalle_Atencion" Type="PET_DBModel.Store.Detalle_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Detalle_Atencion">
+              <PropertyRef Name="id_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_det_empleado_equipo">
+          <End Role="Equipo_Sede" Type="PET_DBModel.Store.Equipo_Sede" Multiplicity="0..1" />
+          <End Role="Detalle_Atencion" Type="PET_DBModel.Store.Detalle_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipo_Sede">
+              <PropertyRef Name="id_equipo" />
+            </Principal>
+            <Dependent Role="Detalle_Atencion">
+              <PropertyRef Name="id_equipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_det_tipo_examen">
+          <End Role="Examen" Type="PET_DBModel.Store.Examen" Multiplicity="1" />
+          <End Role="Detalle_Atencion" Type="PET_DBModel.Store.Detalle_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Examen">
+              <PropertyRef Name="id_tipo_examen" />
+            </Principal>
+            <Dependent Role="Detalle_Atencion">
+              <PropertyRef Name="id_tipo_examen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empleado_atencion">
+          <End Role="Empleado" Type="PET_DBModel.Store.Empleado" Multiplicity="1" />
+          <End Role="Cartilla_Atencion" Type="PET_DBModel.Store.Cartilla_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Cartilla_Atencion">
+              <PropertyRef Name="id_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empleado_sede">
+          <End Role="Sede" Type="PET_DBModel.Store.Sede" Multiplicity="1" />
+          <End Role="Empleado" Type="PET_DBModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="id_sede" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="id_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empleado_supervisor">
+          <End Role="Empleado" Type="PET_DBModel.Store.Empleado" Multiplicity="0..1" />
+          <End Role="Empleado1" Type="PET_DBModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Empleado1">
+              <PropertyRef Name="id_supervisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_equipo_sede">
+          <End Role="Sede" Type="PET_DBModel.Store.Sede" Multiplicity="1" />
+          <End Role="Equipo_Sede" Type="PET_DBModel.Store.Equipo_Sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="id_sede" />
+            </Principal>
+            <Dependent Role="Equipo_Sede">
+              <PropertyRef Name="id_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_id_comprobante">
+          <End Role="Comprobante_Pago" Type="PET_DBModel.Store.Comprobante_Pago" Multiplicity="1" />
+          <End Role="Comprobante_Examen" Type="PET_DBModel.Store.Comprobante_Examen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobante_Pago">
+              <PropertyRef Name="id_comprobante" />
+            </Principal>
+            <Dependent Role="Comprobante_Examen">
+              <PropertyRef Name="id_comprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_paciente_atencion">
+          <End Role="Paciente" Type="PET_DBModel.Store.Paciente" Multiplicity="1" />
+          <End Role="Cartilla_Atencion" Type="PET_DBModel.Store.Cartilla_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="id_paciente" />
+            </Principal>
+            <Dependent Role="Cartilla_Atencion">
+              <PropertyRef Name="id_paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_paciente_pago">
+          <End Role="Paciente" Type="PET_DBModel.Store.Paciente" Multiplicity="1" />
+          <End Role="Comprobante_Pago" Type="PET_DBModel.Store.Comprobante_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="id_paciente" />
+            </Principal>
+            <Dependent Role="Comprobante_Pago">
+              <PropertyRef Name="id_paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_tipo_examen">
+          <End Role="Examen" Type="PET_DBModel.Store.Examen" Multiplicity="1" />
+          <End Role="Comprobante_Examen" Type="PET_DBModel.Store.Comprobante_Examen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Examen">
+              <PropertyRef Name="id_tipo_examen" />
+            </Principal>
+            <Dependent Role="Comprobante_Examen">
+              <PropertyRef Name="id_tipo_examen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PET_DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PET_DBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Cartilla_Atencion" EntityType="PET_DBModel.Cartilla_Atencion" />
+          <EntitySet Name="Clientes" EntityType="PET_DBModel.Cliente" />
+          <EntitySet Name="Comprobante_Examen" EntityType="PET_DBModel.Comprobante_Examen" />
+          <EntitySet Name="Comprobante_Pago" EntityType="PET_DBModel.Comprobante_Pago" />
+          <EntitySet Name="Detalle_Atencion" EntityType="PET_DBModel.Detalle_Atencion" />
+          <EntitySet Name="Empleadoes" EntityType="PET_DBModel.Empleado" />
+          <EntitySet Name="Equipo_Sede" EntityType="PET_DBModel.Equipo_Sede" />
+          <EntitySet Name="Examen" EntityType="PET_DBModel.Examen" />
+          <EntitySet Name="Pacientes" EntityType="PET_DBModel.Paciente" />
+          <EntitySet Name="Sedes" EntityType="PET_DBModel.Sede" />
+          <AssociationSet Name="fk_id_cliente_atencion" Association="PET_DBModel.fk_id_cliente_atencion">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_det_cartilla_de_atencion" Association="PET_DBModel.fk_id_det_cartilla_de_atencion">
+            <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+            <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empleado_atencion" Association="PET_DBModel.fk_id_empleado_atencion">
+            <End Role="Empleado" EntitySet="Empleadoes" />
+            <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_paciente_atencion" Association="PET_DBModel.fk_id_paciente_atencion">
+            <End Role="Paciente" EntitySet="Pacientes" />
+            <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_cliente_paciente" Association="PET_DBModel.fk_id_cliente_paciente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Paciente" EntitySet="Pacientes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_cliente_pago" Association="PET_DBModel.fk_id_cliente_pago">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_id_comprobante" Association="PET_DBModel.fk_id_id_comprobante">
+            <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+            <End Role="Comprobante_Examen" EntitySet="Comprobante_Examen" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_tipo_examen" Association="PET_DBModel.fk_id_tipo_examen">
+            <End Role="Examen" EntitySet="Examen" />
+            <End Role="Comprobante_Examen" EntitySet="Comprobante_Examen" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_paciente_pago" Association="PET_DBModel.fk_id_paciente_pago">
+            <End Role="Paciente" EntitySet="Pacientes" />
+            <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_det_empleado" Association="PET_DBModel.fk_id_det_empleado">
+            <End Role="Empleado" EntitySet="Empleadoes" />
+            <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_det_empleado_equipo" Association="PET_DBModel.fk_id_det_empleado_equipo">
+            <End Role="Equipo_Sede" EntitySet="Equipo_Sede" />
+            <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_det_tipo_examen" Association="PET_DBModel.fk_id_det_tipo_examen">
+            <End Role="Examen" EntitySet="Examen" />
+            <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empleado_sede" Association="PET_DBModel.fk_id_empleado_sede">
+            <End Role="Sede" EntitySet="Sedes" />
+            <End Role="Empleado" EntitySet="Empleadoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empleado_supervisor" Association="PET_DBModel.fk_id_empleado_supervisor">
+            <End Role="Empleado" EntitySet="Empleadoes" />
+            <End Role="Empleado1" EntitySet="Empleadoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_equipo_sede" Association="PET_DBModel.fk_id_equipo_sede">
+            <End Role="Sede" EntitySet="Sedes" />
+            <End Role="Equipo_Sede" EntitySet="Equipo_Sede" />
+          </AssociationSet>
+          <EntitySet Name="Usuarios" EntityType="PET_DBModel.Usuarios" />
+        </EntityContainer>
+        <EntityType Name="Cartilla_Atencion">
+          <Key>
+            <PropertyRef Name="id_cartilla_atencion" />
+          </Key>
+          <Property Name="id_cartilla_atencion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="id_paciente" Type="Int32" Nullable="false" />
+          <Property Name="id_empleado" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
+          <Property Name="estado_cartilla" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="numero_comprobante" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="PET_DBModel.fk_id_cliente_atencion" FromRole="Cartilla_Atencion" ToRole="Cliente" />
+          <NavigationProperty Name="Detalle_Atencion" Relationship="PET_DBModel.fk_id_det_cartilla_de_atencion" FromRole="Cartilla_Atencion" ToRole="Detalle_Atencion" />
+          <NavigationProperty Name="Empleado" Relationship="PET_DBModel.fk_id_empleado_atencion" FromRole="Cartilla_Atencion" ToRole="Empleado" />
+          <NavigationProperty Name="Paciente" Relationship="PET_DBModel.fk_id_paciente_atencion" FromRole="Cartilla_Atencion" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="dni" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="apellido_paterno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="apellido_materno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="120" Unicode="false" FixedLength="false" />
+          <Property Name="telefono_casa" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="celular" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="correo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cartilla_Atencion" Relationship="PET_DBModel.fk_id_cliente_atencion" FromRole="Cliente" ToRole="Cartilla_Atencion" />
+          <NavigationProperty Name="Pacientes" Relationship="PET_DBModel.fk_id_cliente_paciente" FromRole="Cliente" ToRole="Paciente" />
+          <NavigationProperty Name="Comprobante_Pago" Relationship="PET_DBModel.fk_id_cliente_pago" FromRole="Cliente" ToRole="Comprobante_Pago" />
+        </EntityType>
+        <EntityType Name="Comprobante_Examen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_comprobante" Type="Int32" Nullable="false" />
+          <Property Name="id_tipo_examen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Comprobante_Pago" Relationship="PET_DBModel.fk_id_id_comprobante" FromRole="Comprobante_Examen" ToRole="Comprobante_Pago" />
+          <NavigationProperty Name="Examan" Relationship="PET_DBModel.fk_id_tipo_examen" FromRole="Comprobante_Examen" ToRole="Examen" />
+        </EntityType>
+        <EntityType Name="Comprobante_Pago">
+          <Key>
+            <PropertyRef Name="id_comprobante" />
+          </Key>
+          <Property Name="id_comprobante" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="id_paciente" Type="Int32" Nullable="false" />
+          <Property Name="numero_comprobante" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="monto_total" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
+          <Property Name="tipo_comprobante" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="forma_pago" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="estado_comprobante" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="PET_DBModel.fk_id_cliente_pago" FromRole="Comprobante_Pago" ToRole="Cliente" />
+          <NavigationProperty Name="Comprobante_Examen" Relationship="PET_DBModel.fk_id_id_comprobante" FromRole="Comprobante_Pago" ToRole="Comprobante_Examen" />
+          <NavigationProperty Name="Paciente" Relationship="PET_DBModel.fk_id_paciente_pago" FromRole="Comprobante_Pago" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Detalle_Atencion">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cartilla_atencion" Type="Int32" Nullable="false" />
+          <Property Name="id_tipo_examen" Type="Int32" Nullable="false" />
+          <Property Name="id_empleado" Type="Int32" />
+          <Property Name="especificacion_examen" Type="String" MaxLength="130" Unicode="false" FixedLength="false" />
+          <Property Name="estado_examen_atencion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="id_equipo" Type="Int32" />
+          <NavigationProperty Name="Cartilla_Atencion" Relationship="PET_DBModel.fk_id_det_cartilla_de_atencion" FromRole="Detalle_Atencion" ToRole="Cartilla_Atencion" />
+          <NavigationProperty Name="Empleado" Relationship="PET_DBModel.fk_id_det_empleado" FromRole="Detalle_Atencion" ToRole="Empleado" />
+          <NavigationProperty Name="Equipo_Sede" Relationship="PET_DBModel.fk_id_det_empleado_equipo" FromRole="Detalle_Atencion" ToRole="Equipo_Sede" />
+          <NavigationProperty Name="Examan" Relationship="PET_DBModel.fk_id_det_tipo_examen" FromRole="Detalle_Atencion" ToRole="Examen" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="id_empleado" />
+          </Key>
+          <Property Name="id_empleado" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="dni" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="nombres" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="apellido_paterno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="apellido_materno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="especialidad" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="120" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="telefono_casa" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="celular" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="correo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="cargo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="id_supervisor" Type="Int32" />
+          <Property Name="id_sede" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cartilla_Atencion" Relationship="PET_DBModel.fk_id_empleado_atencion" FromRole="Empleado" ToRole="Cartilla_Atencion" />
+          <NavigationProperty Name="Detalle_Atencion" Relationship="PET_DBModel.fk_id_det_empleado" FromRole="Empleado" ToRole="Detalle_Atencion" />
+          <NavigationProperty Name="Sede" Relationship="PET_DBModel.fk_id_empleado_sede" FromRole="Empleado" ToRole="Sede" />
+          <NavigationProperty Name="Empleado1" Relationship="PET_DBModel.fk_id_empleado_supervisor" FromRole="Empleado" ToRole="Empleado1" />
+          <NavigationProperty Name="Empleado2" Relationship="PET_DBModel.fk_id_empleado_supervisor" FromRole="Empleado1" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="Equipo_Sede">
+          <Key>
+            <PropertyRef Name="id_equipo" />
+          </Key>
+          <Property Name="id_equipo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="id_sede" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Detalle_Atencion" Relationship="PET_DBModel.fk_id_det_empleado_equipo" FromRole="Equipo_Sede" ToRole="Detalle_Atencion" />
+          <NavigationProperty Name="Sede" Relationship="PET_DBModel.fk_id_equipo_sede" FromRole="Equipo_Sede" ToRole="Sede" />
+        </EntityType>
+        <EntityType Name="Examen">
+          <Key>
+            <PropertyRef Name="id_tipo_examen" />
+          </Key>
+          <Property Name="id_tipo_examen" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_examen" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Comprobante_Examen" Relationship="PET_DBModel.fk_id_tipo_examen" FromRole="Examen" ToRole="Comprobante_Examen" />
+          <NavigationProperty Name="Detalle_Atencion" Relationship="PET_DBModel.fk_id_det_tipo_examen" FromRole="Examen" ToRole="Detalle_Atencion" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="id_paciente" />
+          </Key>
+          <Property Name="id_paciente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="raza" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="tipo" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="color" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cartilla_Atencion" Relationship="PET_DBModel.fk_id_paciente_atencion" FromRole="Paciente" ToRole="Cartilla_Atencion" />
+          <NavigationProperty Name="Cliente" Relationship="PET_DBModel.fk_id_cliente_paciente" FromRole="Paciente" ToRole="Cliente" />
+          <NavigationProperty Name="Comprobante_Pago" Relationship="PET_DBModel.fk_id_paciente_pago" FromRole="Paciente" ToRole="Comprobante_Pago" />
+        </EntityType>
+        <EntityType Name="Sede">
+          <Key>
+            <PropertyRef Name="id_sede" />
+          </Key>
+          <Property Name="id_sede" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Ubicacion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Empleadoes" Relationship="PET_DBModel.fk_id_empleado_sede" FromRole="Sede" ToRole="Empleado" />
+          <NavigationProperty Name="Equipo_Sede" Relationship="PET_DBModel.fk_id_equipo_sede" FromRole="Sede" ToRole="Equipo_Sede" />
+        </EntityType>
+        <Association Name="fk_id_cliente_atencion">
+          <End Role="Cliente" Type="PET_DBModel.Cliente" Multiplicity="1" />
+          <End Role="Cartilla_Atencion" Type="PET_DBModel.Cartilla_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="Cartilla_Atencion">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_det_cartilla_de_atencion">
+          <End Role="Cartilla_Atencion" Type="PET_DBModel.Cartilla_Atencion" Multiplicity="1" />
+          <End Role="Detalle_Atencion" Type="PET_DBModel.Detalle_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cartilla_Atencion">
+              <PropertyRef Name="id_cartilla_atencion" />
+            </Principal>
+            <Dependent Role="Detalle_Atencion">
+              <PropertyRef Name="id_cartilla_atencion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empleado_atencion">
+          <End Role="Empleado" Type="PET_DBModel.Empleado" Multiplicity="1" />
+          <End Role="Cartilla_Atencion" Type="PET_DBModel.Cartilla_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Cartilla_Atencion">
+              <PropertyRef Name="id_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_paciente_atencion">
+          <End Role="Paciente" Type="PET_DBModel.Paciente" Multiplicity="1" />
+          <End Role="Cartilla_Atencion" Type="PET_DBModel.Cartilla_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="id_paciente" />
+            </Principal>
+            <Dependent Role="Cartilla_Atencion">
+              <PropertyRef Name="id_paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_cliente_paciente">
+          <End Role="Cliente" Type="PET_DBModel.Cliente" Multiplicity="1" />
+          <End Role="Paciente" Type="PET_DBModel.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_cliente_pago">
+          <End Role="Cliente" Type="PET_DBModel.Cliente" Multiplicity="1" />
+          <End Role="Comprobante_Pago" Type="PET_DBModel.Comprobante_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="Comprobante_Pago">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_id_comprobante">
+          <End Role="Comprobante_Pago" Type="PET_DBModel.Comprobante_Pago" Multiplicity="1" />
+          <End Role="Comprobante_Examen" Type="PET_DBModel.Comprobante_Examen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobante_Pago">
+              <PropertyRef Name="id_comprobante" />
+            </Principal>
+            <Dependent Role="Comprobante_Examen">
+              <PropertyRef Name="id_comprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_tipo_examen">
+          <End Role="Examen" Type="PET_DBModel.Examen" Multiplicity="1" />
+          <End Role="Comprobante_Examen" Type="PET_DBModel.Comprobante_Examen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Examen">
+              <PropertyRef Name="id_tipo_examen" />
+            </Principal>
+            <Dependent Role="Comprobante_Examen">
+              <PropertyRef Name="id_tipo_examen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_paciente_pago">
+          <End Role="Paciente" Type="PET_DBModel.Paciente" Multiplicity="1" />
+          <End Role="Comprobante_Pago" Type="PET_DBModel.Comprobante_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="id_paciente" />
+            </Principal>
+            <Dependent Role="Comprobante_Pago">
+              <PropertyRef Name="id_paciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_det_empleado">
+          <End Role="Empleado" Type="PET_DBModel.Empleado" Multiplicity="0..1" />
+          <End Role="Detalle_Atencion" Type="PET_DBModel.Detalle_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Detalle_Atencion">
+              <PropertyRef Name="id_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_det_empleado_equipo">
+          <End Role="Equipo_Sede" Type="PET_DBModel.Equipo_Sede" Multiplicity="0..1" />
+          <End Role="Detalle_Atencion" Type="PET_DBModel.Detalle_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipo_Sede">
+              <PropertyRef Name="id_equipo" />
+            </Principal>
+            <Dependent Role="Detalle_Atencion">
+              <PropertyRef Name="id_equipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_det_tipo_examen">
+          <End Role="Examen" Type="PET_DBModel.Examen" Multiplicity="1" />
+          <End Role="Detalle_Atencion" Type="PET_DBModel.Detalle_Atencion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Examen">
+              <PropertyRef Name="id_tipo_examen" />
+            </Principal>
+            <Dependent Role="Detalle_Atencion">
+              <PropertyRef Name="id_tipo_examen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empleado_sede">
+          <End Role="Sede" Type="PET_DBModel.Sede" Multiplicity="1" />
+          <End Role="Empleado" Type="PET_DBModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="id_sede" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="id_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empleado_supervisor">
+          <End Role="Empleado" Type="PET_DBModel.Empleado" Multiplicity="0..1" />
+          <End Role="Empleado1" Type="PET_DBModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="id_empleado" />
+            </Principal>
+            <Dependent Role="Empleado1">
+              <PropertyRef Name="id_supervisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_equipo_sede">
+          <End Role="Sede" Type="PET_DBModel.Sede" Multiplicity="1" />
+          <End Role="Equipo_Sede" Type="PET_DBModel.Equipo_Sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="id_sede" />
+            </Principal>
+            <Dependent Role="Equipo_Sede">
+              <PropertyRef Name="id_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Type="Int32" Name="id_usuario" Nullable="false" />
+          <Property Type="String" Name="full_nombres" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombre_usuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="clave_usuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PET_DBModelStoreContainer" CdmEntityContainer="PET_DBEntities">
+          <EntitySetMapping Name="Cartilla_Atencion">
+            <EntityTypeMapping TypeName="PET_DBModel.Cartilla_Atencion">
+              <MappingFragment StoreEntitySet="Cartilla_Atencion">
+                <ScalarProperty Name="id_cartilla_atencion" ColumnName="id_cartilla_atencion" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
+                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="estado_cartilla" ColumnName="estado_cartilla" />
+                <ScalarProperty Name="numero_comprobante" ColumnName="numero_comprobante" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="PET_DBModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono_casa" ColumnName="telefono_casa" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comprobante_Examen">
+            <EntityTypeMapping TypeName="PET_DBModel.Comprobante_Examen">
+              <MappingFragment StoreEntitySet="Comprobante_Examen">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_comprobante" ColumnName="id_comprobante" />
+                <ScalarProperty Name="id_tipo_examen" ColumnName="id_tipo_examen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comprobante_Pago">
+            <EntityTypeMapping TypeName="PET_DBModel.Comprobante_Pago">
+              <MappingFragment StoreEntitySet="Comprobante_Pago">
+                <ScalarProperty Name="id_comprobante" ColumnName="id_comprobante" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
+                <ScalarProperty Name="numero_comprobante" ColumnName="numero_comprobante" />
+                <ScalarProperty Name="monto_total" ColumnName="monto_total" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="tipo_comprobante" ColumnName="tipo_comprobante" />
+                <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
+                <ScalarProperty Name="estado_comprobante" ColumnName="estado_comprobante" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Detalle_Atencion">
+            <EntityTypeMapping TypeName="PET_DBModel.Detalle_Atencion">
+              <MappingFragment StoreEntitySet="Detalle_Atencion">
+                <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+                <ScalarProperty Name="id_cartilla_atencion" ColumnName="id_cartilla_atencion" />
+                <ScalarProperty Name="id_tipo_examen" ColumnName="id_tipo_examen" />
+                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+                <ScalarProperty Name="especificacion_examen" ColumnName="especificacion_examen" />
+                <ScalarProperty Name="estado_examen_atencion" ColumnName="estado_examen_atencion" />
+                <ScalarProperty Name="id_equipo" ColumnName="id_equipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleadoes">
+            <EntityTypeMapping TypeName="PET_DBModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="especialidad" ColumnName="especialidad" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="telefono_casa" ColumnName="telefono_casa" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="id_supervisor" ColumnName="id_supervisor" />
+                <ScalarProperty Name="id_sede" ColumnName="id_sede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipo_Sede">
+            <EntityTypeMapping TypeName="PET_DBModel.Equipo_Sede">
+              <MappingFragment StoreEntitySet="Equipo_Sede">
+                <ScalarProperty Name="id_equipo" ColumnName="id_equipo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_sede" ColumnName="id_sede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Examen">
+            <EntityTypeMapping TypeName="PET_DBModel.Examen">
+              <MappingFragment StoreEntitySet="Examen">
+                <ScalarProperty Name="id_tipo_examen" ColumnName="id_tipo_examen" />
+                <ScalarProperty Name="tipo_examen" ColumnName="tipo_examen" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pacientes">
+            <EntityTypeMapping TypeName="PET_DBModel.Paciente">
+              <MappingFragment StoreEntitySet="Paciente">
+                <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="raza" ColumnName="raza" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sedes">
+            <EntityTypeMapping TypeName="PET_DBModel.Sede">
+              <MappingFragment StoreEntitySet="Sede">
+                <ScalarProperty Name="id_sede" ColumnName="id_sede" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="PET_DBModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="clave_usuario" ColumnName="clave_usuario" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="full_nombres" ColumnName="full_nombres" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
